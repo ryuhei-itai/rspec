@@ -27,9 +27,17 @@ describe Cat do
     it "is 'zizi'" do
       expect(@zizi.name).to eq 'zizi'
     end
-    it "is 'kiki'" do
+    it "is not 'kiki'" do
       # attr_accessorメソッドはインスタンス変数を定義するので読み込めない
-      expect{ @kiki.name }.to raise_error(NoMethodError)
+      # 代わりにclass.nameは名前空間を取得する
+      expect(@kiki.name).to eq 'Cat'
+    end
+  end
+
+  describe "older" do
+    it "is not 'old'" do
+      # attr_accessorメソッドはインスタンス変数を定義するので読み込めない
+      expect{ @kiki.older }.to raise_error(NoMethodError)
     end
   end
 

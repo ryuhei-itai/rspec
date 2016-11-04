@@ -17,6 +17,7 @@ class Cat
   # クラスメソッド
   def self.old(name)
     @name, @older  = name, OLD
+    self
   end
 
   # インスタンスメソッド
